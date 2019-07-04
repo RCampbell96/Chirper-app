@@ -30,7 +30,7 @@ class AppNavBar extends Component {
                             Chirper
                     </NavbarBrand>
                         <NavbarToggler onClick={this.toggle} />
-                        <Collapse>
+                        <Collapse isOpen={this.state.isOpen} navbar>
                             <Nav className="ml-auto" navbar>
                                 <NavItem>
                                     <NavLink href="https://github.com/RCampbell96">
