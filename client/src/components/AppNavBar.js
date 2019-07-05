@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import {
     Collapse,
     Navbar,
@@ -25,7 +24,6 @@ class AppNavBar extends Component {
     render() {
         return (
             <div>
-                <Router>
                     <Navbar color="dark" dark expands="sm" className="mb-5">
                         <Container>
                             <NavbarBrand href="/">
@@ -46,8 +44,6 @@ class AppNavBar extends Component {
                             </Collapse>
                         </Container>
                     </Navbar>
-                
-                </Router>
             </div>
         );
     }
