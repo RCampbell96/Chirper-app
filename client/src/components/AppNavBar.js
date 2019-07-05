@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import {
     Collapse,
     Navbar,
@@ -7,7 +8,7 @@ import {
     Nav,
     NavItem,
     NavLink,
-    Container
+    Container,
 } from 'reactstrap';
 
 class AppNavBar extends Component {
@@ -24,23 +25,29 @@ class AppNavBar extends Component {
     render() {
         return (
             <div>
-                <Navbar color="dark" dark expands="sm" className="mb-5">
-                    <Container>
-                        <NavbarBrand href="/">
-                            Chirper
+                <Router>
+                    <Navbar color="dark" dark expands="sm" className="mb-5">
+                        <Container>
+                            <NavbarBrand href="/">
+                                Chirper
                     </NavbarBrand>
-                        <NavbarToggler onClick={this.toggle} />
-                        <Collapse isOpen={this.state.isOpen} navbar>
-                            <Nav className="ml-auto" navbar>
-                                <NavItem>
-                                    <NavLink href="https://github.com/RCampbell96">
-                                        GitHub
+                            <NavbarToggler onClick={this.toggle} />
+                            <Collapse isOpen={this.state.isOpen} navbar>
+                                <Nav className="ml-auto" navbar>
+                                    <NavItem>
+                                        <NavLink href="/register">
+                                            Sign-up
                                 </NavLink>
-                                </NavItem>
-                            </Nav>
-                        </Collapse>
-                    </Container>
-                </Navbar>
+                                        <NavLink href="/feed">
+                                            Chirp Feed
+                                    </NavLink>
+                                    </NavItem>
+                                </Nav>
+                            </Collapse>
+                        </Container>
+                    </Navbar>
+                
+                </Router>
             </div>
         );
     }
